@@ -1,0 +1,23 @@
+<h1>Listing photos</h1>
+
+<table>
+  <tr>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+<tr>
+<form action="/photos">
+	<input type="text" name="tags" />
+</form>
+</tr>
+</table>
+<div>
+<% @photos.each do |photo| %>
+	<div class="img-container">
+		<div class="title"><%= photo.title %></div>
+		<div class="img"><%= image_tag photo.url(:small) %></div>
+  </div>
+<% end %>
+</div>
+
